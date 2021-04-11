@@ -1,20 +1,13 @@
-#1
-
 import os 
 from os import listdir
-
-
 import pathlib
 path = pathlib.Path(__file__).parent.absolute()
 
-#path.replace('\', '\\')
-print(str(path))
-print(str(path).replace('\\',r'\\'))
-#2
-folder_path = path
-#3
+printed_path = str(path).replace('\\',r'\\')
+folder_path = printed_path+'\\' 
+
+end_extension = input('enter the file extension : ')
+
 for file_name in listdir(folder_path):
-    #4
-    if file_name.endswith('.sr'):
-        #5
+    if file_name.endswith(end_extension):
         os.remove(folder_path + file_name)
